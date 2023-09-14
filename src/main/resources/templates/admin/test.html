@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="3">
+        <p th:each="user : ${users}">
+            <tr>
+                <td th:text="${user.id}">1</td>
+                <td th:text="${user.username}">1</td>
+                <td th:text="${user.password}">1</td>
+                <td th:text="${user.email}">1</td>
+                <td th:text="${user.first_name}">1</td>
+                <td th:text="${user.last_name}">1</td>
+                <td th:text="${user.tel}">1</td>
+                <td th:text="${user.address}">1</td>
+                <td th:text="${user.role}">1</td>
+                <td th:text="${user.status}">1</td>
+                <td th:text="${user.enabled}">1</td>
+                <td th:text="${user.verified}">1</td>
+                <td th:text="${user.create_date}">1</td>
+            </tr>
+            <tr th:each="posts: ${user.posts}">
+                <td>---</td>
+                <td>---</td>
+                <td th:text="${posts.getId()}">1</td>
+                <td th:text="${posts.getLikes()}">1</td>
+                <td th:text="${posts.getViews()}">1</td>
+                <td th:text="${posts.getTitle()}">1</td>
+                <td th:text="${posts.getMini_text()}">1</td>
+                <td th:text="${posts.getText()}">1</td>
+                <td th:text="${posts.getCreate_date()}">1</td>
+                <td th:text="${posts.getUpdate_date()}">1</td>
+                <td th:text="${posts.getOwner().getId()}">1</td>
+            </tr>
+        </p>
+    </table>
+</body>
+</html>

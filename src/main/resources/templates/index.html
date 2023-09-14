@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>MyFriends</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+    </head>
+    <body>
+        <main class="h-75">
+            <p th:text="'Hello, ' + ${name} + '!'" />
+            <div sec:authorize="hasAuthority('OWNER')" > Has Authority OWNER </div>
+            <div sec:authorize="hasAuthority('ADMIN')" > Has Authority ADMIN </div>
+            <div sec:authorize="hasAnyAuthority('ADMIN', 'OWNER')"><a href="/test">test</a></div>
+            <div sec:authorize="isAuthenticated()"><a href="/login?logout">logout</a></div>
+
+            <div class="container h-100 row mx-auto">
+                <div class="col-md-6 d-flex align-items-center">
+                    <div class="mx-auto">
+                        <div class="text-center">
+                            <img src="img/logo.svg" height="500" alt="MyFriends" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex align-items-center">
+                    <div class="card text-center mx-auto shadow-lg" style="width: 21rem;">
+                        <div class="card-header">
+                            <h1 class="fw-light text-center">MyFriends</h1>
+                        </div>
+                        <div class="card-body">
+                            <a href="/login" class="btn w-100 btn-lg btn-outline-primary">Войти</a>
+                            <hr>
+                            <a href="#" class="btn w-100 btn-lg btn-outline-primary">Зарегистрироваться</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="pt-3 border-top fixed-bottom shadow-lg">
+            <p class="text-center text-body-secondary">© 2023 MyFriends By Gotsa</p>
+        </footer>
+    </body>
+</html>
