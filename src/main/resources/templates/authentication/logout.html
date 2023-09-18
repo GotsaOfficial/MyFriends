@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>MF | LogOut</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+<body>
+<div class="container h-100 mx-auto d-flex align-items-center">
+    <div class="card text-center mx-auto shadow-lg" style="width: 50rem;">
+        <div class="card-header">
+            <h1 class="fw-light text-center pt-3 pb-3">Вы точно хотите выйти?</h1>
+        </div>
+        <div class="card-body">
+            <form th:action="@{/logout}" method="post">
+                <input class="btn w-100 btn-lg btn-outline-primary mt-2" type="submit" value="Выйти"/>
+            </form>
+        </div>
+    </div>
+</div>
+<footer class="pt-3 border-top fixed-bottom shadow-lg">
+    <p class="text-center text-body-secondary">© 2023 MyFriends By Gotsa</p>
+</footer>
+</body>
+</html>

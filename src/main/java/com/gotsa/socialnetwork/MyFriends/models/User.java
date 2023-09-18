@@ -24,8 +24,8 @@ public class User {
     private String address;
     private Role role;
     private Status status;
-    private Boolean enabled;
-    private Boolean verified;
+    private Boolean isEnabled;
+    private Boolean isVerified;
     @CreationTimestamp
     private LocalDate create_date;
     @OneToMany(
@@ -39,7 +39,18 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String username, String password, String email, String first_name, String last_name, String tel, String address, Role role, Status status, Boolean enabled, Boolean verified, LocalDate create_date, Set<Post> posts, LocalDate b_day, String about) {
+    public User(String username, String password, String email, String first_name, String last_name, String tel, String address, LocalDate b_day) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.tel = tel;
+        this.address = address;
+        this.b_day = b_day;
+    }
+
+    public User(Long id, String username, String password, String email, String first_name, String last_name, String tel, String address, Role role, Status status, Boolean isEnabled, Boolean isVerified, LocalDate create_date, Set<Post> posts, LocalDate b_day, String about) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -50,8 +61,8 @@ public class User {
         this.address = address;
         this.role = role;
         this.status = status;
-        this.enabled = enabled;
-        this.verified = verified;
+        this.isEnabled = isEnabled;
+        this.isVerified = isVerified;
         this.create_date = create_date;
         this.posts = posts;
         this.b_day = b_day;
@@ -139,19 +150,19 @@ public class User {
     }
 
     public Boolean getEnabled() {
-        return enabled;
+        return isEnabled;
     }
 
     public void setEnabled(Boolean enabled) {
-        this.enabled = enabled;
+        isEnabled = enabled;
     }
 
     public Boolean getVerified() {
-        return verified;
+        return isVerified;
     }
 
     public void setVerified(Boolean verified) {
-        this.verified = verified;
+        isVerified = verified;
     }
 
     public LocalDate getCreate_date() {

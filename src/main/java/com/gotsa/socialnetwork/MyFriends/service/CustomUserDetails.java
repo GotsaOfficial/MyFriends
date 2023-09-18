@@ -8,11 +8,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Collections;
 
-public class CustmoUserDetails implements UserDetails {
+public class CustomUserDetails implements UserDetails {
 
     private User user;
 
-    public CustmoUserDetails(User user) {
+    public CustomUserDetails(User user) {
         super();
         this.user = user;
     }
@@ -50,5 +50,9 @@ public class CustmoUserDetails implements UserDetails {
     @Override
     public boolean isEnabled() {
         return user.getEnabled();
+    }
+
+    public Long getId() {
+        return user.getId();
     }
 }

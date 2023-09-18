@@ -2,14 +2,14 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="UTF-8">
-        <title>MyFriends</title>
+        <title th:text="${username}">MF |</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/bootstrap.css">
     </head>
     <body>
         <table border="3">
-            <p th:each="user : ${users}">
+            <p th:each="user : ${user}">
                 <tr>
                     <td th:text="${user.getId()}">1</td>
                     <td th:text="${user.getUsername()}">1</td>
