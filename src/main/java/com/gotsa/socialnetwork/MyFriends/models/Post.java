@@ -28,6 +28,17 @@ public class Post {
     public Post() {
     }
 
+    public Post(String title, String text, User owner) {
+        this.owner = owner;
+        this.title = title;
+        this.text = text;
+        if (text.length() > 64) {
+            this.mini_text = text.substring(0, 50) + ".....";
+        }
+        this.likes = 0;
+        this.views = 0;
+    }
+
     public Post(Long id, String title, String mini_text, String text, Integer likes, Integer views, User owner, LocalDate create_date, LocalDate update_date) {
         this.id = id;
         this.title = title;

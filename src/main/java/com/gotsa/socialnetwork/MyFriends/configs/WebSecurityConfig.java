@@ -54,7 +54,10 @@ public class WebSecurityConfig {
                         .requestMatchers("/css/**").permitAll()
                         .requestMatchers("/img/**").permitAll()
                         .requestMatchers("/profile/**").permitAll()
+                        .requestMatchers("/post/**").permitAll()
+
                         .requestMatchers("/admin/**").hasAnyAuthority("ADMIN", "OWNER")
+
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form

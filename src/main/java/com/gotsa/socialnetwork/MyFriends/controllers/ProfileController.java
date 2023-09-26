@@ -18,7 +18,7 @@ public class ProfileController {
     private UserRepository userRepository;
 
     @GetMapping("/profile/{id}")
-    public String postsFullText(@PathVariable(value = "id") long id, Model model) {
+    public String profile(@PathVariable(value = "id") long id, Model model) {
         if(!userRepository.existsById(id)) {
             return "redirect:/profile/1";
         }
